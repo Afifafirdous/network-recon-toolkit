@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-cyber-border;
+  }
+
+  html {
+    @apply bg-cyber-bg text-cyber-text;
+    scrollbar-width: thin;
+    scrollbar-color: #1e2d4a #0a0e1a;
+  }
+
+  body {
+    @apply bg-cyber-bg text-cyber-text font-sans antialiased;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(14, 165, 233, 0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0e1a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1e2d4a;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00d4ff33;
+  }
+}
+
+@layer components {
+  /* Cyber card with subtle glow */
+  .cyber-card {
+    @apply bg-cyber-card border border-cyber-border rounded-xl p-5 
+           transition-all duration-200;
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  .cyber-card:hover {
+    border-color: rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.05);
+  }
+
+  /* Glowing input */
+  .cyber-input {
+    @apply bg-cyber-surface border border-cyber-border rounded-lg px-4 py-3
+           text-cyber-text font-mono text-sm
+           focus:outline-none focus:border-cyber-accent
+           transition-all duration-200 w-full;
+  }
+
+  .cyber-input:focus {
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+  }
+
+  /* Primary button */
+  .cyber-btn {
+    @apply bg-cyber-accent text-cyber-bg font-semibold rounded-lg px-5 py-3
+           transition-all duration-200 flex items-center gap-2
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .cyber-btn:hover:not(:disabled) {
+    @apply bg-cyber-accent-dim;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+
+  /* Ghost button */
+  .cyber-btn-ghost {
+    @apply border border-cyber-border text-cyber-text-dim rounded-lg px-4 py-2
+           transition-all duration-200 flex items-center gap-2 text-sm;
+  }
+
+  .cyber-btn-ghost:hover {
+    @apply border-cyber-accent text-cyber-accent bg-cyber-accent/5;
+  }
+
+  /* Label style */
+  .cyber-label {
+    @apply text-xs font-mono text-cyber-text-dim uppercase tracking-wider;
+  }
+
+  /* Value style */
+  .cyber-value {
+    @apply text-sm font-mono text-cyber-text mt-1;
+  }
+
+  /* Accent text */
+  .text-accent {
+    @apply text-cyber-accent;
+  }
+
+  /* Status badge */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-mono;
+  }
+
+  .badge-success {
+    @apply badge bg-cyber-success/10 text-cyber-success border border-cyber-success/20;
+  }
+
+  .badge-danger {
+    @apply badge bg-cyber-danger/10 text-cyber-danger border border-cyber-danger/20;
+  }
+
+  .badge-warning {
+    @apply badge bg-cyber-warning/10 text-cyber-warning border border-cyber-warning/20;
+  }
+
+  .badge-info {
+    @apply badge bg-cyber-accent/10 text-cyber-accent border border-cyber-accent/20;
+  }
+
+  .badge-neutral {
+    @apply badge bg-cyber-muted/20 text-cyber-text-dim border border-cyber-border;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyber-accent to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}

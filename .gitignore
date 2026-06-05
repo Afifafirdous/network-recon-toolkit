@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+**/dist/
+
+# Environment files (CRITICAL — never commit these)
+.env
+.env.local
+.env.production
+**/.env
+!**/.env.example
+
+# Python legacy (just in case)
+__pycache__/
+*.pyc
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript build info
+*.tsbuildinfo
